@@ -2,8 +2,7 @@
 
 ### With Andrew Pla and Mason Moser
 
-Link to the PowerShell Wednesday's video:
-- [Andew learns VIM on a whim with Mason Moser](https://www.youtube.com/live/qSk-WMtgbnE?si=2dXkhh5Dh-L4XNYM)
+Link to the PowerShell Wednesday's video: [Andew learns VIM on a whim with Mason Moser](https://www.youtube.com/live/qSk-WMtgbnE?si=2dXkhh5Dh-L4XNYM)
 
 ## Start Here (If You've Never Used Vim)
 
