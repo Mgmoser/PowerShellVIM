@@ -7,7 +7,7 @@ Link to the PowerShell Wednesday's Video:
 
 ### VIM Introduction
 Move around:  Use the cursor keys, or "h" to go left,
-"j" to go down, "k" to go up, "l" to go right.              	 
+"j" to go down, "k" to go up, "l" to go right.
 Close this window:  Use ":q<Enter>".
 Get out of Vim:  Use ":qa!<Enter>" (careful, all changes are lost!).
 
@@ -31,19 +31,19 @@ Command + Count + Motion
 If you hit a command twice, it applies the command to the entire line of text. Ie. ```dd``` deletes the entire line of code.
 
 ### Common Commands:
-d - delete
-c - change
-y - yank          -> We don't "copy" in vim. We "yank", cute right?
-v - visual mode
-x - deletes one letter
-. - repeat last command
+* d - delete
+* c - change
+* y - yank          -> We don't "copy" in vim. We "yank", cute right?
+* v - visual mode
+* x - deletes one letter
+* . - repeat last command
 
 ### Common Motions:
 
-w - word
-l -letter
-$ - end of line
-^ - beginning of line
+* w - word
+* l -letter
+* $ - end of line
+* ^ - beginning of line
 
 ### Wait Buffers? What's that?
 Buffers are where your text goes automatically anytime you delete it or yank it. There are othertimes that this happens, but this is all you need to worry about now.
@@ -53,9 +53,9 @@ Hit ```dd``` to delete an entire line, move to a line you want to insert it, and
 
 ### Tips:
 
-Go to line = <number>G
-Jump by word = w
-Jump by back a word = b
+* Go to line = <number>G
+* Jump by word = w
+* Jump by back a word = b
 
 ### Editor Settings (These typically don't work in VSCode):
 Set editor to include number lines = :set number
