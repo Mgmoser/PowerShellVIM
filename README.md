@@ -12,7 +12,7 @@ Move around with arrow keys, or with Vim movement keys:
 - `k` = up
 - `l` = right
 
-[VIM Motion Basics](/images/vimMotionBasics.png)
+![VIM Motion Basics](/images/vimMotionBasics.png)
 
 Basic exit commands:
 - Close current window: `:q<Enter>`
