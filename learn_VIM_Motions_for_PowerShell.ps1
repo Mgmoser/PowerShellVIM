@@ -154,7 +154,12 @@ Get-ChildItem -Path C:\Scripts -Recurse |
 
 
 
+#Exercise 3: Move to the next word under your cursor, hit * to search for the next occurrence of the word under your cursor, and # to search for the previous occurrence.
+# Hover over dog and hit *
 
+$string = 'The quick brown fox jumps over the lazy dog. The dog was not happy about it.'
+$string2 = 'The dog bit the fox.'
+$string3 = 'The dog and the fox are now frenemies.'
 
 
 
@@ -189,7 +194,7 @@ Get-ChildItem -Path C:\Scripts -Recurse |
 #   x = delete the character under the cursor
 #   There are typos in the line below. Use x to fix them!
 
-$messaage = "Helllo Worlld"
+$messaage = 'Helllo Worlld'
 Write-Hostt $messaage
 
 
@@ -561,13 +566,13 @@ foreach ($number in $listOfNumbers) {
 #   The "i" stands for "inside". You can also use "a" for "around" which includes the delimiters themselves.
 #   Try ci" on the wrong message below to fix it. Then try ci{ on the scriptblock to replace its body.
 
-$errorMessage = "Something went horribly wrong with the flux capacitor"
+$errorMessage = 'Something went horribly wrong with the flux capacitor'
 Write-Error $errorMessage
 
 $action = { Get-ChildItem -Path C:\OldPath -Recurse | Remove-Item -Force }
 Invoke-Command -ScriptBlock $action
 
-Get-ADUser -Filter { Department -eq "WrongDepartment" } | Set-ADUser -Department "IT"
+Get-ADUser -Filter { Department -eq 'WrongDepartment' } | Set-ADUser -Department 'IT'
 
 
 
@@ -616,18 +621,18 @@ Get-ADUser -Filter { Department -eq "WrongDepartment" } | Set-ADUser -Department
 #   p  = put (paste) below the current line
 #   Use yy on one of the existing parameters, then p to paste copies. Edit each copy to create new parameters.
 
-function New-Person{
-	[CmdletBinding()]
-	#Add parameters: Height, Skills, FavoriteFood
-	param(
-		[string]$Name,
-		[int]$Age
-	)
+function New-Person {
+    [CmdletBinding()]
+    #Add parameters: Height, Skills, FavoriteFood
+    param(
+        [string]$Name,
+        [int]$Age
+    )
 
-	[PSCustomObject]@{
-		Name = $Name
-		Age = $Age
-	}
+    [PSCustomObject]@{
+        Name = $Name
+        Age  = $Age
+    }
 
 }
 
@@ -681,13 +686,13 @@ function New-Person{
 #   You can press . to repeat the indent if you need more levels.
 
 function Get-DiskSpace {
-param([string]$ComputerName = $env:COMPUTERNAME)
-$disks = Get-CimInstance -ClassName Win32_LogicalDisk -ComputerName $ComputerName
-foreach ($disk in $disks) {
-$freeGB = [math]::Round($disk.FreeSpace / 1GB, 2)
-$totalGB = [math]::Round($disk.Size / 1GB, 2)
-Write-Host "$($disk.DeviceID) - Free: ${freeGB}GB / Total: ${totalGB}GB"
-}
+    param([string]$ComputerName = $env:COMPUTERNAME)
+    $disks = Get-CimInstance -ClassName Win32_LogicalDisk -ComputerName $ComputerName
+    foreach ($disk in $disks) {
+        $freeGB = [math]::Round($disk.FreeSpace / 1GB, 2)
+        $totalGB = [math]::Round($disk.Size / 1GB, 2)
+        Write-Host "$($disk.DeviceID) - Free: ${freeGB}GB / Total: ${totalGB}GB"
+    }
 }
 
 
@@ -767,9 +772,9 @@ $timeoutSeconds = 30
 #   guu = make the entire line lowercase
 #   Fix the casing on the lines below.
 
-$environment = "PRODUCTION"
-$LOGLEVEL = "debug"
-write-host "Deploying to $environment with log level $LOGLEVEL"
+$environment = 'PRODUCTION'
+$LOGLEVEL = 'debug'
+Write-Host "Deploying to $environment with log level $LOGLEVEL"
 
 
 
@@ -819,9 +824,245 @@ write-host "Deploying to $environment with log level $LOGLEVEL"
 #   :%s/old/new/g = replace ALL occurrences in the ENTIRE file
 #   The variable below is poorly named. Use :%s/\$x/\$computerName/g to rename it everywhere.
 
-$x = Get-Content -Path "C:\servers.txt"
+$x = Get-Content -Path 'C:\servers.txt'
 foreach ($entry in $x) {
     Test-Connection -ComputerName $entry -Count 1 -ErrorAction SilentlyContinue |
         ForEach-Object { Write-Host "Ping to $entry ($x): $($_.ResponseTime)ms" }
 }
 Write-Host "Checked all entries in `$x"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ==========================================
+# GROUP 10: ADVANCED VSCode VIM WORKFLOWS
+# ==========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Exercise 19: Refactor repeated lines fast with a macro.
+#   qq      = start recording macro into register q
+#   q       = stop recording
+#   @q      = replay macro once
+#   10@q    = replay macro 10 times
+#   VSCode Neovim: Works - macros are one of the best ways to apply the same edit across many similar lines.
+#   When to use this: Converting repeated object properties, renaming prefixes, or normalizing assignment lines.
+#
+#   Practice idea:
+#   1) Put cursor on first line below and type: qq0cw$server_<Esc>j0q
+#   2) Then run 9@q to apply to the rest of the block.
+
+$alphaServer = 'srv-alpha-01'
+$betaServer = 'srv-beta-01'
+$gammaServer = 'srv-gamma-01'
+$deltaServer = 'srv-delta-01'
+$epsilonServer = 'srv-epsilon-01'
+$zetaServer = 'srv-zeta-01'
+$etaServer = 'srv-eta-01'
+$thetaServer = 'srv-theta-01'
+$iotaServer = 'srv-iota-01'
+$kappaServer = 'srv-kappa-01'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Exercise 20: Perform safe large substitutions with confirm and line ranges.
+#   :%s/old/new/gc           = replace across whole file with confirmation
+#   :10,40s/old/new/g        = replace only in a line range
+#   :'<,'>s/old/new/g        = replace in visual selection
+#   VSCode Neovim: Works - command-line substitutions and confirms are highly reliable in the extension.
+#   When to use this: Renaming cmdlets/variables without accidentally touching unrelated code.
+#
+#   Practice idea:
+#   - Use :%s/Write-Host/Write-Verbose/gc and accept/reject each replacement.
+#   - Then use a line-range substitution on just this block.
+
+Write-Host 'Starting deployment for API'
+Write-Host 'Validating environment settings'
+Write-Host 'Importing module dependencies'
+Write-Host 'Running pre-checks'
+Write-Host 'Deploying resources'
+Write-Host 'Checking deployment health'
+Write-Host 'Publishing final summary'
+Write-Host 'Deployment completed'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Exercise 21: Make column-style edits with Visual Block mode.
+#   <C-v>     = start visual block mode
+#   Itext     = insert text at start of each selected line (apply with <Esc>)
+#   Atext     = append text at end of each selected line (apply with <Esc>)
+#   VSCode Neovim: Partial - works in most setups; if <C-v> is intercepted by paste, remap or use an alternate key.
+#   When to use this: Prefixing many lines with "$", "#", or adding common suffixes in one move.
+#
+#   Practice idea:
+#   - Block-select the first column of lines below, press I, type "$", press <Esc>.
+#   - Then block-select line ends, press A, type " # verified", press <Esc>.
+
+server01 = 'online'
+server02 = 'online'
+server03 = 'offline'
+server04 = 'online'
+server05 = 'offline'
+server06 = 'online'
+server07 = 'online'
+server08 = 'offline'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Exercise 22: Use global commands for selective bulk edits.
+#   :g/pattern/d                 = delete lines matching pattern
+#   :g/pattern/normal A text     = run normal-mode append on matching lines
+#   :v/pattern/d                 = inverse global (delete lines NOT matching pattern)
+#   VSCode Neovim: Works - very effective for targeted command-line bulk editing.
+#   When to use this: Removing debug noise, tagging error lines, or narrowing logs quickly.
+#
+#   Practice idea:
+#   - Add tags to only error lines: :g/ERROR/normal A # needs-triage
+#   - Delete all debug lines: :g/DEBUG/d
+
+Write-Output 'INFO: Starting sync job'
+Write-Output 'DEBUG: Loaded local cache metadata'
+Write-Output 'INFO: Contacting endpoint'
+Write-Output 'ERROR: Endpoint timed out'
+Write-Output 'DEBUG: Retry attempt 1'
+Write-Output 'ERROR: Retry attempt failed'
+Write-Output 'INFO: Job finished with warnings'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Exercise 23: Navigate large scripts with marks, jump list, and search chaining.
+#   ma      = set mark a at current cursor location
+#   `a      = jump exactly back to mark a
+#   <C-o>   = jump backward in jump list
+#   <C-i>   = jump forward in jump list
+#   n / N   = next/previous search result
+#   VSCode Neovim: Works - excellent for large files and multi-function PowerShell modules in editor tabs.
+#   When to use this: Jumping between helper functions and main workflow without losing your place.
+#
+#   Practice idea:
+#   1) Set a mark at Invoke-Deployment with ma
+#   2) Search /Get-DeploymentTargets and navigate with n/N
+#   3) Use <C-o> and <C-i> to move your jump history, then return with `a
+
+function Get-DeploymentTargets {
+    param([string]$Environment)
+    return @("app01-$Environment", "app02-$Environment", "api01-$Environment")
+}
+
+function Test-DeploymentHealth {
+    param([string[]]$Targets)
+    foreach ($target in $Targets) {
+        Write-Output "Testing health on $target"
+    }
+}
+
+function Invoke-Deployment {
+    param([string]$Environment)
+    $targets = Get-DeploymentTargets -Environment $Environment
+    Test-DeploymentHealth -Targets $targets
+    foreach ($target in $targets) {
+        Write-Output "Deploying to $target"
+    }
+    Write-Output "Deployment completed for $Environment"
+}
