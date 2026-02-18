@@ -1,3 +1,8 @@
+# DISCLAIMER: The docker features and the build script in this repository were built by AI. I put this together for a presentation in less than 24 hours, review that code before executing as it has not been fully reviewed yet.
+## The examples and README were put together without AI assistance.
+
+
+
 # Introduction to VIM Motions for PowerShell Users
 
 ### With Andrew Pla and Mason Moser
