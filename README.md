@@ -7,7 +7,7 @@ Link to the PowerShell Wednesday's Video:
 
 ### VIM Introduction
 
-                                            									 k
+                                            					 k
 Move around:  Use the cursor keys, or "h" to go left,	       h   l
 "j" to go down, "k" to go up, "l" to go right.              	 j
 Close this window:  Use ":q<Enter>".

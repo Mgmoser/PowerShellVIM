@@ -31,23 +31,78 @@ y - yank
 v - visual mode
 
 Wait Buffers? What's that?
+It's where the text goes when you delete or yank it. You can have multiple buffers:
+- Default buffer (acts like a clipboard, but data enters it automatically)
+- Some other automatic buffers.
+- Named buffers (you can name them and use them to store text for later use)
+
 
 Common Motions:
+w - word
+l -letter
+$ - end of line
+^ - beginning of line where the text starts
+0 - beginning of line
 
 
-Set editor to include number lines = :set number
-Set editor to include relative number lines = :set relativenumber
-
-Tips:
-
-Go to line = <number>G
-Jump by word = w
-Jump by back a word = b
-
-}
 
 #>
-#Delete/Yank/Change a whole line. dd/yy/cc
+#Below are the tutorial exercises. They are seperated by many lines for the presentation.
+
+#Navigate tutorial with below tips to make it easier to get to each exercise.
+
+#   Go down half a page and/or up half a page with ctrl+d and ctrl+u.
+#   Go to next occurence of space before a line with text or the next blank line after without text with shift+} and shift+{
+#   In normal mode, hit 20j to go down 20 lines. This is probaly the easiest way to jump to the next exercise, but not the most efficeient.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Delete/Yank/Change a whole line. dd/yy/cc  (Clearly there is an error below, fix it with VIM!)
+
+Write-Output $variable
+$variable = 'Hello VIM!'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Create a multiple parameters in the param block to reduce typing.
 
@@ -56,23 +111,91 @@ param(
 	[int]$Count
 )
 
-#Change a word.
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Change a word. You know the one you want to change...
+
+Write-Host "Hello $Name, you have $Count new messages. Also, I Andrew Pla cannot edit with VIM."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Go to begginning of a line and the end of the line.
 
-#Change a variable everywhere in the file.
+Write-Host "Hello $Name, you have $Count new messages. Also, I Andrew Pla can edit with VIM."
 
-#Surround code with characters.
 
-#Go to the next ({["'"]}) with %
 
-#Go down half a page and/or up half a page.
 
-#Go to the bottom of the page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Go to the next ({[]}) with %
+
+
+$listOfNumbers = 1, 2, 3, 4, 5
+
+foreach ($number in $listOfNumbers) {
+	Write-Host [string]$number
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Go to the bottom of the page. - shift+G
 
 #Find text (ctrl+f replacement)
-
-#Jump to the next blank line.
+#   - all you need to do is hit the / and type what you want to search for.
+#   - Next, hit enter to select the pattern.
+#   - After hitting enter, you can hit n to go to the next occurence of the pattern and shift+n to go to the previous occurence of the pattern.
 
 #Increment a number one digit. (ctrl+a)
 #(This works with a count too!)
@@ -86,3 +209,7 @@ param(
 #Capitalize all the letters in the line with gUU.
 
 #Lowercase all the letters in the line with guu.
+
+#Surround code with characters.
+#Change a variable everywhere in the file.
+# Requires a command
