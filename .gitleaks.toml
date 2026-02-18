@@ -1,0 +1,7 @@
+title = "PowerShellVIM gitleaks config"
+
+[allowlist]
+description = "Allow known non-secret training text and docs"
+paths = [
+  '''^vimTutorFile\.txt$''',
+]

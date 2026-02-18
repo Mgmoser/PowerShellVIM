@@ -145,6 +145,11 @@ What it covers:
 Official Neovim install docs:
 - https://neovim.io/doc/install/
 
+## Docker and Codespaces Setup
+
+If you want a containerized Neovim environment (local Docker or GitHub Codespaces):
+- See `README.docker.md`
+
 ## Resources
 
 - Learn to type faster: https://www.keybr.com/
@@ -152,4 +157,25 @@ Official Neovim install docs:
 - Game to learn basic VIM motions: https://vim-adventures.com/
 - Manbearpiet's intro blog post: https://manbearpiet.com/posts/nvim/
 - Manbearpiet's Neovim config repository: https://github.com/Manbearpiet/kickstart.nvim/tree/master#
+
+## Security and Privacy for Contributors
+
+This repository is intended for sharing and collaboration. Please keep it safe to publish:
+
+- Do not commit credentials, keys, tokens, or `.env` files with real values.
+- Use `.env.example` as a placeholder template only.
+- Keep machine-local/editor runtime files out of version control.
+
+### Secret Scanning
+
+This repo includes `gitleaks` scanning in CI (`.github/workflows/secret-scan.yml`) and supports local pre-commit scans (`.pre-commit-config.yaml`).
+
+To enable local scans:
+
+1. Install pre-commit:
+   - `pip install pre-commit`
+2. Install hooks:
+   - `pre-commit install`
+3. Run scan manually:
+   - `pre-commit run --all-files`
 

@@ -1,3 +1,35 @@
-./.github*
-./.vscode*
-./PowerShellEditorServices.json
+# Secrets and environment files
+.env
+.env.*
+*.env
+!.env.example
+*.secret
+*.secrets
+secrets.*
+*.key
+*.pem
+*.pfx
+*.p12
+*.crt
+*.cer
+
+# Cloud and cluster credentials
+.aws/
+.azure/
+*.kubeconfig
+
+# Local editor/runtime state
+PowerShellEditorServices.json
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary caches
+*.log
+.cache/
+tmp/

@@ -1,0 +1,17 @@
+{
+  "name": "PowerShellVIM Neovim Dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "neovim-dev",
+  "workspaceFolder": "/workspaces/PowerShellVIM",
+  "remoteUser": "vscode",
+  "overrideCommand": false,
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "container-bootstrap.sh --sync-workspace",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
