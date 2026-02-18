@@ -12,6 +12,8 @@ Move around with arrow keys, or with Vim movement keys:
 - `k` = up
 - `l` = right
 
+[VIM Motion Basics](/images/vimMotionBasics.png)
+
 Basic exit commands:
 - Close current window: `:q<Enter>`
 - Exit Vim without saving: `:qa!<Enter>` (careful, all changes are lost)
@@ -147,4 +149,7 @@ Official Neovim install docs:
 
 - Learn to type faster: https://www.keybr.com/
 - Official Neovim install instructions: https://neovim.io/doc/install/
+- Game to learn basic VIM motions: https://vim-adventures.com/
+- Manbearpiet's intro blog post: https://manbearpiet.com/posts/nvim/
+- Manbearpiet's Neovim config repository: https://github.com/Manbearpiet/kickstart.nvim/tree/master#
 
