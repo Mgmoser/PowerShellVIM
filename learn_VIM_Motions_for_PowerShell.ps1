@@ -49,7 +49,7 @@ dw - delete word or 3dw, delete 3 words
 d$ - delete from the cursor to the end of the line
 dd - delete the entire line
 dt<character> - delete to the character specified
-di( - delete inside of the parentheses
+di( - delete inside of the parentheses (this one is beaufitul, it can be run when inside the characters: {, [, (,',"   )
 
 
 
@@ -218,8 +218,8 @@ Write-Hostt $messaage
 #   cc = change the entire line (deletes it and puts you in insert mode)
 #   The Write-Output is before the variable assignment. Use dd to cut the line, move down, then p to paste it after.
 
-Write-Output $variable
-$variable = 'Hello VIM!'
+Write-Output $variable1
+$variable1 = 'Hello VIM!'
 
 
 
