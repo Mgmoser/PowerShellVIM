@@ -130,7 +130,7 @@ Beginner progression:
 ## Installation and Setup (Beginner-Friendly)
 
 If you are brand new, run the guided installer script first:
-- `buildNeovimWindows.ps1`
+- `buildNeovimInAnyOS.ps1`
 
 What it covers:
 - Detects OS and available package manager
