@@ -59,7 +59,7 @@ Example:
 - `^` = first non-whitespace character on the line
 - `$` = end of line
 
-Useful combinations:
+## Useful combinations:
 - `dw` = delete word
 - `d$` / `D` = delete to end of line
 - `dt<char>` = delete up to a specific character
