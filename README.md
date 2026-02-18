@@ -2,86 +2,150 @@
 
 ### With Andrew Pla and Mason Moser
 
-Link to the PowerShell Wednesday's Video:
+Link to the PowerShell Wednesday's video:
+- Add recording link here
 
+## Start Here (If You've Never Used Vim)
 
-### VIM Introduction
-Move around:  Use the cursor keys, or "h" to go left,
-"j" to go down, "k" to go up, "l" to go right.
-Close this window:  Use ":q<Enter>".
-Get out of Vim:  Use ":qa!<Enter>" (careful, all changes are lost!).
+Move around with arrow keys, or with Vim movement keys:
+- `h` = left
+- `j` = down
+- `k` = up
+- `l` = right
 
-#### There are 3 main modes:
-	1) normal
-		- Escape key always brings you back to normal mode.
-		- i key puts you into insert mode
-		- v key puts you into visual mode
-		- The modes will always be displayed in the bottom left of your screen. Like a status indicator.
-		- You can run commands from normal mode.
-	2) insert
-		- You insert text with in this mode, works as normal mostly.
-	3) visual
-		- Beginners will use this less at first.
-		- Visual mode is useful because it allows you to highlight/select text (visually), then do something with it.
+Basic exit commands:
+- Close current window: `:q<Enter>`
+- Exit Vim without saving: `:qa!<Enter>` (careful, all changes are lost)
 
-### Anatomy of a VIM shortcut command (in normal mode):
+## The 3 Main Modes
 
-Command + Count + Motion
+1. **Normal mode**
+   - `Esc` always gets you back to normal mode
+   - `i` enters insert mode
+   - `v` enters visual mode
+   - Modes are shown at the bottom-left status area
+   - You run most Vim commands from normal mode
+2. **Insert mode**
+   - This is where you type text normally
+3. **Visual mode**
+   - Beginners use this less at first
+   - Useful for selecting text, then doing something with that selection
 
-If you hit a command twice, it applies the command to the entire line of text. Ie. ```dd``` deletes the entire line of code.
+## Anatomy of a Vim Motion
 
-### Common Commands:
-* d = delete
-* c = change
-* y = yank          -> We don't "copy" in vim. We "yank", cute right?
-* v = visual mode
-* x = deletes one letter
-* . = repeat last command
+In normal mode, most editing actions are:
 
-### Common Motions:
+`Command + Count + Motion`
 
-* w = word
-* l = letter
-* $ = end of line
-* ^ = beginning of line
+Example:
+- `dd` deletes a full line (same operator pressed twice applies to the whole line)
 
-### Wait Buffers? What's that?
-Buffers are where your text goes automatically anytime you delete it or yank it. There are othertimes that this happens, but this is all you need to worry about now.
+## Common Commands (Operators)
 
-Hit ``dd to delete an entire line, move to a line you want to insert it, and then hit ``p and the deleted text will be pasted below your cursor.
+- `d` = delete
+- `c` = change
+- `y` = yank (we do not "copy" in Vim, we "yank"... cute right?)
+- `v` = visual mode
+- `x` = delete one character
+- `.` = repeat last command
 
+## Common Motions
 
-### Navigation:
+- `w` = move forward by word
+- `b` = move back by word
+- `l` = move right by letter
+- `0` = very beginning of line (column 0)
+- `^` = first non-whitespace character on the line
+- `$` = end of line
 
-* Go to line = <number>G
-* Jump by word = w
-* Jump by back a word = b
+Useful combinations:
+- `dw` = delete word
+- `d$` / `D` = delete to end of line
+- `dt<char>` = delete up to a specific character
+- `cw` = change word
+- `C` = change to end of line
+- `ci"` / `ci{` / `ci(` = change inside delimiters
+- `di"` / `di(` = delete inside delimiters
 
-### Editor Settings (These typically don't work in VSCode):
-* Set editor to include number lines = ``:set number
-* Set editor to include relative number lines = ``: relativenumber
+## Wait... Buffers? What's That?
 
+Buffers are where deleted/yanked text goes automatically.
 
-###
+Types you should know:
+- **Default buffer**: acts like your automatic clipboard
+- **Other automatic buffers**: Vim keeps a few histories for you automatically
+- **Named buffers**: you can intentionally store text in named slots for later use
 
-###
+Quick example:
+1. `dd` to delete a line
+2. Move cursor
+3. `p` to put (paste) it below
 
-###
+## Core Navigation
 
-###
+- Go to top of file: `gg`
+- Go to bottom of file: `G`
+- Go to line: `{number}G`
+- Jump by word: `w`
+- Jump back by word: `b`
+- Jump quickly by count: `20j` (move down 20 lines)
+- Match bracket/brace/paren: `%`
+- Find text: `/searchTerm` (this is your Vim version of `Ctrl+F`)
+- Scroll half page down/up: `Ctrl+d` / `Ctrl+u`
+- Jump to next/previous paragraph-ish block: `Shift+}` / `Shift+{`
+- Center cursor line on screen: `zz`
 
-###
+## Editor Settings (Often Not Supported in VSCode Vim)
 
-###
+- Show line numbers: `:set number`
+- Show relative numbers: `:set relativenumber`
 
-###
+## Exercise Outline (Concise)
 
-###
+The full guided exercises live in `learn_VIM_Motions_for_PowerShell.ps1`.
 
-###
+Beginner progression:
+1. **Movement and positioning**
+   - Start/end of line (`0`, `^`, `$`)
+   - Top/bottom/specific line (`gg`, `G`, `{n}G`)
+   - Navigation helpers (`20j`, `Ctrl+d`, `Ctrl+u`, `Shift+}`, `Shift+{`, `zz`)
+2. **Basic edits**
+   - Delete character (`x`)
+   - Line ops (`dd`, `yy`, `cc`, `p`)
+   - Undo/redo (`u`, `Ctrl+r`)
+   - Open new lines (`o`, `O`)
+3. **Operator + motion fluency**
+   - `dw`, `D`, `C`, `cw`, `dt<char>`, `.`
+4. **Search and structure**
+   - `/` search (replace the usual editor `Ctrl+F` flow)
+   - `%` matching delimiters
+   - Inside delimiters (`ci"`, `ci{`, `di(`)
+5. **Productivity and formatting**
+   - Duplicate lines (`yy`, `p`)
+   - Visual line mode (`V`) and indent/dedent (`>`, `<`)
+   - Number increment/decrement (`Ctrl+a`, `Ctrl+x`)
+   - Case toggles (`~`, `gUU`, `guu`)
+   - Substitute in file (`:%s/old/new/g`)
 
-### Resources:
+## Installation and Setup (Beginner-Friendly)
 
-- Learn to type: https://www.keybr.com/
-- Neovim Intallation Instructions: https://neovim.io/doc/install/
+If you are brand new, run the guided installer script first:
+- `buildNeovimWindows.ps1`
+
+What it covers:
+- Detects OS and available package manager
+- Confirms install command before running
+- Handles common elevation/admin cases
+- Checks whether `nvim` is in `PATH`
+- Offers optional health check
+- Offers optional starter config install (with backup if config exists)
+- Provides troubleshooting tips if something fails
+
+Official Neovim install docs:
+- https://neovim.io/doc/install/
+
+## Resources
+
+- Learn to type faster: https://www.keybr.com/
+- Official Neovim install instructions: https://neovim.io/doc/install/
 
