@@ -162,6 +162,7 @@ If you want a containerized Neovim environment (local Docker or GitHub Codespace
 - Game to learn basic VIM motions: https://vim-adventures.com/
 - Manbearpiet's intro blog post: https://manbearpiet.com/posts/nvim/
 - Manbearpiet's Neovim config repository: https://github.com/Manbearpiet/kickstart.nvim/tree/master#
+- Jake Hildreth's Locksmith2 repository: https://github.com/jakehildreth/Locksmith2/tree/main
 
 ## Security and Privacy for Contributors
 
