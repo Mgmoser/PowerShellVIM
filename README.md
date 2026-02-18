@@ -48,7 +48,7 @@ If you hit a command twice, it applies the command to the entire line of text. I
 ### Wait Buffers? What's that?
 Buffers are where your text goes automatically anytime you delete it or yank it. There are othertimes that this happens, but this is all you need to worry about now.
 
-Hit ```dd``` to delete an entire line, move to a line you want to insert it, and then hit ```p``` and the deleted text will be pasted below your cursor.
+Hit ``dd to delete an entire line, move to a line you want to insert it, and then hit ``p and the deleted text will be pasted below your cursor.
 
 
 ### Navigation:
@@ -58,8 +58,8 @@ Hit ```dd``` to delete an entire line, move to a line you want to insert it, and
 * Jump by back a word = b
 
 ### Editor Settings (These typically don't work in VSCode):
-Set editor to include number lines = ``:set number
-Set editor to include relative number lines = ``:set relativenumber
+* Set editor to include number lines = ``:set number
+* Set editor to include relative number lines = ``: relativenumber
 
 
 ###
