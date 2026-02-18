@@ -6,9 +6,8 @@ Link to the PowerShell Wednesday's Video:
 
 
 ### VIM Introduction
-______________________________________________________________   k
-Move around:  Use the cursor keys, or "h" to go left,	       h   l
-"j" to go down, "k" to go up, "l" to go right.              	 j
+Move around:  Use the cursor keys, or "h" to go left,
+"j" to go down, "k" to go up, "l" to go right.              	 
 Close this window:  Use ":q<Enter>".
 Get out of Vim:  Use ":qa!<Enter>" (careful, all changes are lost!).
 
